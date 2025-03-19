@@ -1,0 +1,14 @@
+projeto-carros/
+├── backend/
+│   ├── models/         # Modelos do banco de dados (Model)
+│   ├── controllers/    # Lógica das rotas (Controller)
+│   ├── routes/         # Definição das rotas
+│   ├── config/         # Configurações do banco de dados
+│   └── server.js       # Ponto de entrada do backend
+├── frontend/
+│   ├── css/            # Estilos CSS
+│   ├── js/             # Scripts JavaScript
+│   ├── index.html      # Página principal (View)
+│   └── charts/         # Gráficos e visualizações
+├── analises/           # Scripts Python para análise de dados
+└── README.md           # Documentação do projeto

@@ -14,8 +14,3 @@ projeto-carros/
 └── README.md           # Documentação do projeto
 
 ----------------------------------------------------------
-
-Fonte do projeto 
-Inter
-
-Cores de botoes = #3F91D4

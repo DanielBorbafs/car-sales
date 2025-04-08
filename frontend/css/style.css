@@ -1,0 +1,366 @@
+/*========== GOOGLE FONTS ==========*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+  font-size: 1rem;
+}
+
+/*========== VARIABLES CSS ==========*/
+:root {
+  --header-height: 3.5rem;
+  --nav-width: 215px;
+
+  /*========== Colors ==========*/
+  --sidebar-link: #343434;
+  --primary-color: #5597cd;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'inter', 'sans-serif';
+
+  /*========== Font weight ==========*/
+  --link-sidebar: 1rem;
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem 1rem 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== HEADER ==========*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 0 rgba(22, 8, 43, 0.1);
+  padding: 0 1rem;
+  z-index: var(--z-fixed);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  justify-content: space-between;
+}
+
+.header__img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.header__logo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  display: none;
+}
+
+.header__search {
+  display: flex;
+  padding: 0.4rem 0.75rem;
+
+  border-radius: 0.25rem;
+}
+
+.header__input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.header__input::placeholder {
+  font-family: var(--body-font);
+}
+
+.header__icon,
+.header__toggle {
+  font-size: 1.5rem;
+}
+
+.header__toggle {
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+/*========== NAV ==========*/
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  padding: 1rem 1rem 0;
+  background-color: #ffffff;
+  box-shadow: 1px 0 0 rgba(22, 8, 43, 0.1);
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+.nav__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  overflow: auto;
+  scrollbar-width: none; /* For mozilla */
+}
+
+/* For Google Chrome and others */
+.nav__container::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__logo {
+  margin-bottom: 2rem;
+}
+
+.nav__list,
+.nav__items {
+  display: grid;
+}
+
+.nav__items > a {
+  font-size: 16px;
+}
+
+.nav__items > span {
+  font-size: 16px;
+}
+.nav__list {
+  row-gap: 2.5rem;
+}
+
+.nav__items {
+  row-gap: 1.5rem;
+}
+
+.nav__subtitle {
+  color: #939393;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: var(--sidebar-link);
+}
+
+.nav__link span {
+  color: var(--sidebar-link);
+}
+
+.nav__link span:hover {
+  color: var(--primary-color);
+}
+
+.nav__logout {
+  margin-top: 5rem;
+}
+
+.nav__link:hover {
+  color: #111827; /* Cor do texto ao passar o mouse */
+}
+.nav__icon {
+  margin-right: 12px;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.nav__link:hover .nav__icon {
+  transform: scale(1.1); /* Efeito sutil no ícone */
+  color: var(--primary-color); /* Cor do ícone ao passar o mouse */
+  padding: 0.1rem;
+}
+
+/* Dropdown */
+.nav__dropdown {
+  overflow: hidden;
+  max-height: 21px;
+  transition: 0.4s ease-in-out;
+}
+
+.nav__dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__dropdown-item {
+  color: var(--sidebar-link);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.nav__dropdown-item {
+  padding: 0.2rem;
+  text-align: start;
+}
+
+.nav__dropdown-icon {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+.nav__dropdown:hover {
+  max-height: 100rem;
+}
+
+.show-menu {
+  left: 0;
+}
+
+.nav__dropdown-content {
+  padding: 8px 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav__dropdown-item {
+  display: block;
+  padding: 8px 20px;
+  color: #4b5563;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nav__dropdown-item:hover {
+  background-color: rgba(89, 156, 203, 0.379);
+  color: #111827;
+  padding-left: 24px;
+  border-left: 3px solid #3b82f6;
+}
+
+/* ========== MEDIA QUERIES ==========*/
+
+@media screen and (max-width: 320px) {
+  .header__search {
+    width: 70%;
+  }
+  .nav__dropdown-content {
+    padding: 8px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__dropdown-item {
+    display: block;
+    padding: 8px 20px;
+    color: #4b5563;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .nav__dropdown-item:hover {
+    background-color: rgba(89, 156, 203, 0.379);
+    color: #111827;
+    padding-left: 24px;
+    border-left: 3px solid #3b82f6;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 1rem 3rem 0 6rem;
+  }
+  .header {
+    padding: 0 3rem 0 6rem;
+  }
+  .header__container {
+    height: calc(var(--header-height) + 0.5rem);
+  }
+  .header__search {
+    width: 300px;
+    padding: 0.55rem 0.75rem;
+  }
+  .header__toggle {
+    display: none;
+  }
+  .header__logo {
+    display: block;
+  }
+  .header__img {
+    width: 40px;
+    height: 40px;
+    order: 1;
+  }
+  .nav {
+    left: 0;
+    padding: 1.2rem 1.5rem 0;
+    width: 72px; /* Reduced navbar */
+  }
+  .nav__items {
+    row-gap: 1.7rem;
+  }
+  .nav__icon {
+    font-size: 1.3rem;
+  }
+
+  /* Element opacity */
+  .nav__logo-name,
+  .nav__name,
+  .nav__subtitle,
+  .nav__dropdown-icon {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  /* Navbar expanded */
+  .nav:hover {
+    width: var(--nav-width);
+  }
+
+  /* Visible elements */
+  .nav:hover .nav__logo-name {
+    opacity: 1;
+  }
+  .nav:hover .nav__subtitle {
+    opacity: 1;
+  }
+  .nav:hover .nav__name {
+    opacity: 1;
+  }
+  .nav:hover .nav__dropdown-icon {
+    opacity: 1;
+  }
+}

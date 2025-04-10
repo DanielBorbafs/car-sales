@@ -10,10 +10,6 @@ const showMenu = (headerToggle, navbarId) => {
       toggleBtn.classList.toggle('bx-x');
     });
   }
-
-  if (headerToggle === True) {
-    nav.classList.remove('show-menu');
-  }
 };
 showMenu('header-toggle', 'navbar');
 
